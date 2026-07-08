@@ -1,0 +1,147 @@
+
+<!-- saved from url=(0068)http://localhost/Shoe%20Ordering%20System/shoe-order/admin/index.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Shoe Store Website</title>
+    <link rel="stylesheet" href="./Shoe Store Website_files/admin.css">
+    <link rel="stylesheet" href="./Shoe Store Website_files/all.min.css">
+</head>
+<body>
+    <div class="menu text-center">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="http://localhost/Shoe%20Ordering%20System/shoe-order/admin/index.php"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li>
+                    <a href="http://localhost/Shoe%20Ordering%20System/shoe-order/admin/manage-admin.php"><i class="fas fa-user-shield"></i> Admin</a>
+                </li>
+                <li>
+                    <a href="http://localhost/Shoe%20Ordering%20System/shoe-order/admin/manage-category.php"><i class="fas fa-list"></i> Category</a>
+                </li>
+                <li>
+                    <a href="http://localhost/Shoe%20Ordering%20System/shoe-order/admin/manage-shoes.php"><i class="fas fa-shoe-prints"></i> Shoes</a>
+                </li>
+                <li>
+                    <a href="http://localhost/Shoe%20Ordering%20System/shoe-order/admin/manage-order.php"><i class="fas fa-shopping-cart"></i> Order</a>
+                </li>
+                <li>
+                    <a href="http://localhost/shoe-order/admin/logout.php" class="btn-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li> 
+            </ul>
+        </div>
+    </div>
+
+
+
+
+<link rel="stylesheet" href="./Shoe Store Website_files/bootstrap.min.css">
+<link rel="stylesheet" href="./Shoe Store Website_files/all.min.css">
+<script src="./Shoe Store Website_files/chart.js.download"></script>
+
+<div class="main-content">
+    <div class="container-fluid py-4">
+        <h1 class="mb-4">Dashboard</h1>
+        <div class="row g-4">
+
+            
+            <!-- Card: Categories -->
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-list fa-3x text-primary mb-2"></i>
+                        <h2>4</h2>
+                        <p class="text-muted">Categories</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Admins -->
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-user-shield fa-3x text-success mb-2"></i>
+                        <h2>1</h2>
+                        <p class="text-muted">Admins</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Shoes -->
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-shoe-prints fa-3x text-warning mb-2"></i>
+                        <h2>8</h2>
+                        <p class="text-muted">Shoes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Orders -->
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-shopping-cart fa-3x text-danger mb-2"></i>
+                        <h2>5</h2>
+                        <p class="text-muted">Orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Chart -->
+        <div class="card mt-4 shadow-sm">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-chart-line"></i> Orders Overview</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="ordersChart" height="608" style="display: block; box-sizing: border-box; height: 487px; width: 1461px;" width="1826"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const ctx = document.getElementById('ordersChart').getContext('2d');
+
+// Sample data: Replace this with dynamic PHP queries if needed
+const ordersData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+    datasets: [{
+        label: 'Orders',
+        data: [12, 19, 10, 15, 20, 25, 18, 22],
+        backgroundColor: 'rgba(255, 77, 109, 0.5)',
+        borderColor: 'rgba(255, 77, 109, 1)',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.4
+    }]
+};
+
+const ordersChart = new Chart(ctx, {
+    type: 'line',
+    data: ordersData,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: true },
+            tooltip: { mode: 'index', intersect: false }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+</script>
+
+
+<div class="footer">
+            <div class="wrapper">
+           <p class="text-center">Shoe Online Ordering System, Developed by:<a href="http://localhost/Shoe%20Ordering%20System/shoe-order/admin/a">Aaron Aranas</a></p>
+            </div>
+        </div>
+    
+
+</body></html>
